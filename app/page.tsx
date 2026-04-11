@@ -38,7 +38,7 @@ export default async function Home() {
           
           
           {/* 左サイドバー */}
-          <div className="w-full md:w-1/3 flex flex-col gap-6">
+          <div className="w-full md:w-1/3 flex flex-col gap-6 order-2 md:order-1">
             <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
               <div className="flex items-center gap-3">
                 <Image
@@ -163,7 +163,7 @@ export default async function Home() {
           
 
           {/* 右カラム */}
-          <div className="w-full md:w-2/3 flex flex-col gap-6">
+          <div className="w-full md:w-2/3 flex flex-col gap-6 order-1 md:order-2">
 
             {/* Kaggle 実績ゾーン */}
             <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
