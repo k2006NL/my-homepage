@@ -12,8 +12,8 @@ export const ACCOUNTS = {
     username: "nele",
   },
   kaggle: {
-    username: "k2006NL",           // Kaggleアカウント名を変更する場合はここを編集
-    profileUrl: "https://www.kaggle.com/k2006NL",
+    username: "k2006NL",           
+    profileUrl: "https://www.kaggle.com/nelnomial",
     tier: "Contributor",           // Novice / Contributor / Expert / Master / Grandmaster
     tierColor: "text-green-500",   // teirに合わせて色を変更
     medals: {
