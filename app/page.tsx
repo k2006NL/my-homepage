@@ -3,17 +3,22 @@ import { FaGithub, FaFire, FaArrowRight, FaGooglePlay } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import SocialButton from "@/components/SocialButton";
 import { getZennArticles, PICKUP_ARTICLES } from "@/lib/zenn";
-import { 
-  SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, 
-  SiPython, SiR, SiCplusplus, SiZenn
+import { fetchAtCoderRate, getAtCoderColor } from "@/lib/atcoder";
+import { ACCOUNTS } from "@/lib/accounts";
+import {
+  SiTypescript, SiReact, SiNextdotjs, SiTailwindcss,
+  SiPython, SiR, SiCplusplus, SiZenn, SiMysql, SiKaggle
 } from "react-icons/si"; // 技術系アイコン
 
 export default async function Home() {
-  
+
   // 先にZennの記事データを取得
   const latestArticles = await getZennArticles();
 
-  const ZENN_PROFILE_URL = "https://zenn.dev/fleure"
+  const atcoderRate = await fetchAtCoderRate(ACCOUNTS.atcoder.username)
+  console.log(atcoderRate)
+
+  const kaggle = ACCOUNTS.kaggle;
 
   return (
     <>
@@ -31,8 +36,27 @@ export default async function Home() {
       <div className="bg-zinc-50 dark:bg-black min-h-screen p-5">
         <main className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6 items-start justify-center">
           
+          
           {/* 左サイドバー */}
           <div className="w-full md:w-1/3 flex flex-col gap-6">
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/images/AtCoder-logo.png"
+                  alt="AtCoder Icon"
+                  width={80}
+                  height={50}
+                />
+                
+                <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">
+                  Algorithm 
+                </p>
+                <p className={`${getAtCoderColor(atcoderRate)} font-extrabold text-2xl mb-4`}>
+                  {atcoderRate > 0 ? atcoderRate : "Unrated"}
+                </p>
+
+              </div>
+            </div>
             <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">作ったアプリ</p>
               <a 
@@ -67,16 +91,18 @@ export default async function Home() {
               </a>
             </div>
 
+            
+
             <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">SNS</p>
               <div className="flex gap-4">
-                <SocialButton 
-                  href="https://x.com/mamelog_coffee" 
-                  icon={<FaXTwitter className="text-4xl" />} 
+                <SocialButton
+                  href={ACCOUNTS.twitter.url}
+                  icon={<FaXTwitter className="text-4xl" />}
                 />
-                <SocialButton 
-                  href="https://github.com/k2006NL" 
-                  icon={<FaGithub className="text-4xl" />} 
+                <SocialButton
+                  href={ACCOUNTS.github.url}
+                  icon={<FaGithub className="text-4xl" />}
                 />
               </div>
             </div>  
@@ -100,6 +126,12 @@ export default async function Home() {
                 <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
                    <SiCplusplus className="text-2xl text-[#00599C]" />
                    <span className="text-[10px] font-bold text-gray-500">C++</span>
+                </div>
+
+                {/* MySQL */}
+                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
+                   <SiMysql className="text-2xl text-[#00599C]" />
+                   <span className="text-[10px] font-bold text-gray-500">MySQL</span>
                 </div>
 
                 {/* TypeScript */}
@@ -130,9 +162,70 @@ export default async function Home() {
           </div>
           
 
-          {/* 右カラム：Tech Blogエリア */} 
-          <div className="w-full md:w-2/3">
-            {/* ここが親カード */}
+          {/* 右カラム */}
+          <div className="w-full md:w-2/3 flex flex-col gap-6">
+
+            {/* Kaggle 実績ゾーン */}
+            <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+              {/* ヘッダーエリア */}
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100 dark:border-zinc-800">
+                <h2 className="text-2xl md:text-3xl font-extrabold flex items-center gap-2 text-gray-800 dark:text-white">
+                  <SiKaggle className="text-[#20BEFF]" /> Kaggle
+                </h2>
+                <a
+                  href={kaggle.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-bold text-gray-400 hover:text-[#20BEFF] flex items-center gap-1 transition-colors group"
+                >
+                  Profile <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+
+              {/* ティアバッジ */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className={`text-lg font-extrabold ${kaggle.tierColor}`}>
+                  {kaggle.tier}
+                </span>
+                <span className="text-xs text-gray-400">@{kaggle.username}</span>
+              </div>
+
+              {/* メダル表 */}
+              <div className="grid grid-cols-3 gap-3">
+                {(["competitions", "notebooks", "discussions"] as const).map((cat) => (
+                  <div
+                    key={cat}
+                    className="bg-gray-50 dark:bg-zinc-800/50 rounded-xl p-3 border border-gray-100 dark:border-zinc-700"
+                  >
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2 capitalize">
+                      {cat}
+                    </p>
+                    <div className="flex gap-2">
+                      <span className="flex flex-col items-center gap-0.5">
+                        <span className="text-base">🥇</span>
+                        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
+                          {kaggle.medals[cat].gold}
+                        </span>
+                      </span>
+                      <span className="flex flex-col items-center gap-0.5">
+                        <span className="text-base">🥈</span>
+                        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
+                          {kaggle.medals[cat].silver}
+                        </span>
+                      </span>
+                      <span className="flex flex-col items-center gap-0.5">
+                        <span className="text-base">🥉</span>
+                        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
+                          {kaggle.medals[cat].bronze}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Tech Blogエリア */}
             <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800 h-full">
               
               {/* ヘッダーエリア */}
@@ -140,8 +233,8 @@ export default async function Home() {
                 <h2 className="text-2xl md:text-3xl font-extrabold flex items-center gap-2 text-gray-800 dark:text-white">
                   <SiZenn className="text-[#3EA8FF]"/> Tech Blog
                 </h2>
-                <a 
-                  href={ZENN_PROFILE_URL}
+                <a
+                  href={ACCOUNTS.zenn.profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-bold text-gray-400 hover:text-[#3EA8FF] flex items-center gap-1 transition-colors group"

@@ -1,4 +1,5 @@
 import Parser from 'rss-parser';
+import { ACCOUNTS } from './accounts';
 
 export const PICKUP_ARTICLES = [
     {
@@ -10,12 +11,11 @@ export const PICKUP_ARTICLES = [
 
 export async function getZennArticles() { //非同期
     const parser = new Parser();
-    const ZENN_USERNAME = "fleure"
 
     try {
         // データ取得が終わるまで待って貰う
-        const feed = await parser.parseURL(`https://zenn.dev/${ZENN_USERNAME}/feed`)
-        return feed.items.slice(0, 3) // 最新3つの取得 
+        const feed = await parser.parseURL(`https://zenn.dev/${ACCOUNTS.zenn.username}/feed`)
+        return feed.items.slice(0, 3) // 最新3つの取得
     } catch (error) { // 失敗したら
         console.error("Zenn failure", error); // エラー表示（デバッグ用）
         return [];
