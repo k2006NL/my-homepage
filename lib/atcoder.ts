@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server';
 export const fetchAtCoderRate = async (username: string): Promise<number> => {
   try {
     const res = await fetch(`https://atcoder.jp/users/${username}/history/json`, {

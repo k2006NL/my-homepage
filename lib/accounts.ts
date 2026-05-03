@@ -9,7 +9,7 @@ export const ACCOUNTS = {
     profileUrl: "https://zenn.dev/fleure",
   },
   atcoder: {
-    username: "nele",
+    username: "fleure",
   },
   kaggle: {
     username: "k2006NL",           

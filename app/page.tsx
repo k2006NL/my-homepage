@@ -266,7 +266,7 @@ export default async function Home() {
                               {article.title}
                             </p>
                             <span className="text-[10px] font-bold text-amber-600 bg-amber-100 px-2 py-0.5 rounded-full shrink-0">
-                              Must Read
+                              Most Read
                             </span>
                           </div>
                           <p className="text-xs text-gray-400 mt-0.5 truncate">
