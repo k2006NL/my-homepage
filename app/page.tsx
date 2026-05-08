@@ -63,7 +63,7 @@ export default async function Home() {
                 href="https://play.google.com/store/apps/details?id=com.mamelog"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-all hover:shadow-md hover:-translate-y-0.5"
+                className="group block p-4 bg-brown-50 dark:bg-brown-900/20 border border-brown-100 dark:border-brown-800 rounded-xl hover:bg-brown-100 dark:hover:bg-brown-900/40 transition-all hover:shadow-md hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-4">
                   
@@ -80,17 +80,49 @@ export default async function Home() {
                   
                   {/* テキストエリア */}
                   <div>
-                    <h3 className="font-bold text-lg text-blue-900 dark:text-blue-100 flex items-center gap-2">
+                    <h3 className="font-bold text-lg text-brown-900 dark:text-brwon-100 flex items-center gap-2">
                       MameLab
                     </h3>
-                    <p className="text-xs text-blue-400 dark:text-blue-300 mt-1 font-medium">
+                    <p className="text-xs text-brown-400 dark:text-brown-300 mt-1 font-medium">
                       コーヒー抽出記録アプリ ☕
                     </p>
                   </div>
                 </div>
               </a>
             </div>
-
+            {/* 
+            <div className="bg-white dark:bg-zinc-900 p-6 round-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+              <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">関わったアプリ</p>
+              <a 
+                href="https://play.google.com/store/apps/details?id=com.hitcomputer.hitoshi&hl=ja"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block p-4 bg-brown-50 dark:bg-brown-900/20 border border-brown-100 dark:border-brown-800 rounded-xl hover:bg-brown-100 dark:hover:bg-brown-900/40 transition-all hover:shadow-md hover:-translate-y-0.5"
+              >
+                <div className="flex items-center gap-4">   
+                  <div className="shrink-0 relative">
+                    <Image
+                      src="/images/bashikoma-icon.png"
+                      alt="MameLab Icon"
+                      width={60}
+                      height={60}
+                      className="rounded-xl shadow-md group-hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-bold text-lg text-brown-900 dark:text-brown-100 flex items-center gap-2">
+                      MameLab
+                    </h3>
+                    <p className="text-xs text-brown-400 dark:text-brown-300 mt-1 font-medium">
+                      バシコマ
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            */}
+            
             
 
             <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
@@ -111,49 +143,49 @@ export default async function Home() {
               
               <div className="flex flex-wrap gap-3">
                 {/* Python */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
+                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
                    <SiPython className="text-2xl text-[#3776AB]" />
                    <span className="text-[10px] font-bold text-gray-500">Python</span>
                 </div>
 
                 {/* R */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
+                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
                    <SiR className="text-2xl text-[#276DC3]" />
                    <span className="text-[10px] font-bold text-gray-500">R</span>
                 </div>
 
                 {/* C++ */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
+                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
                    <SiCplusplus className="text-2xl text-[#00599C]" />
                    <span className="text-[10px] font-bold text-gray-500">C++</span>
                 </div>
 
                 {/* MySQL */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
+                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
                    <SiMysql className="text-2xl text-[#00599C]" />
                    <span className="text-[10px] font-bold text-gray-500">MySQL</span>
                 </div>
 
                 {/* TypeScript */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
+                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
                    <SiTypescript className="text-2xl text-[#3178C6]" />
                    <span className="text-[10px] font-bold text-gray-500">TS</span>
                 </div>
 
                 {/* React */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
+                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
                    <SiReact className="text-2xl text-[#61DAFB]" />
                    <span className="text-[10px] font-bold text-gray-500">React</span>
                 </div>
 
                 {/* Next.js */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
+                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
                    <SiNextdotjs className="text-2xl text-black dark:text-white" />
                    <span className="text-[10px] font-bold text-gray-500">Next.js</span>
                 </div>
 
                 {/* Tailwind */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-[70px]">
+                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
                    <SiTailwindcss className="text-2xl text-[#06B6D4]" />
                    <span className="text-[10px] font-bold text-gray-500">Tailwind</span>
                 </div>
@@ -165,66 +197,7 @@ export default async function Home() {
           {/* 右カラム */}
           <div className="w-full md:w-2/3 flex flex-col gap-6 order-1 md:order-2">
 
-            {/* Kaggle 実績ゾーン */}
-            <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
-              {/* ヘッダーエリア */}
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100 dark:border-zinc-800">
-                <h2 className="text-2xl md:text-3xl font-extrabold flex items-center gap-2 text-gray-800 dark:text-white">
-                  <SiKaggle className="text-[#20BEFF]" /> Kaggle
-                </h2>
-                <a
-                  href={kaggle.profileUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-bold text-gray-400 hover:text-[#20BEFF] flex items-center gap-1 transition-colors group"
-                >
-                  Profile <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-
-              {/* ティアバッジ */}
-              <div className="flex items-center gap-3 mb-6">
-                <span className={`text-lg font-extrabold ${kaggle.tierColor}`}>
-                  {kaggle.tier}
-                </span>
-                <span className="text-xs text-gray-400">@{kaggle.username}</span>
-              </div>
-
-              {/* メダル表 */}
-              <div className="grid grid-cols-3 gap-3">
-                {(["competitions", "notebooks", "discussions"] as const).map((cat) => (
-                  <div
-                    key={cat}
-                    className="bg-gray-50 dark:bg-zinc-800/50 rounded-xl p-3 border border-gray-100 dark:border-zinc-700"
-                  >
-                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2 capitalize">
-                      {cat}
-                    </p>
-                    <div className="flex gap-2">
-                      <span className="flex flex-col items-center gap-0.5">
-                        <span className="text-base">🥇</span>
-                        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
-                          {kaggle.medals[cat].gold}
-                        </span>
-                      </span>
-                      <span className="flex flex-col items-center gap-0.5">
-                        <span className="text-base">🥈</span>
-                        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
-                          {kaggle.medals[cat].silver}
-                        </span>
-                      </span>
-                      <span className="flex flex-col items-center gap-0.5">
-                        <span className="text-base">🥉</span>
-                        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
-                          {kaggle.medals[cat].bronze}
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+            
             {/* Tech Blogエリア */}
             <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800 h-full">
               
@@ -323,7 +296,65 @@ export default async function Home() {
                   </div>
                 )}           
               </div>
+            </div>
+              {/* Kaggle 実績ゾーン */}
+            <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+              {/* ヘッダーエリア */}
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100 dark:border-zinc-800">
+                <h2 className="text-2xl md:text-3xl font-extrabold flex items-center gap-2 text-gray-800 dark:text-white">
+                  <SiKaggle className="text-[#20BEFF]" /> Kaggle
+                </h2>
+                <a
+                  href={kaggle.profileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-bold text-gray-400 hover:text-[#20BEFF] flex items-center gap-1 transition-colors group"
+                >
+                  Profile <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
 
+              {/* ティアバッジ */}
+              <div className="flex items-center gap-3 mb-6">
+                <span className={`text-lg font-extrabold ${kaggle.tierColor}`}>
+                  {kaggle.tier}
+                </span>
+                <span className="text-xs text-gray-400">@{kaggle.username}</span>
+              </div>
+
+              {/* メダル表 */}
+              <div className="grid grid-cols-3 gap-3">
+                {(["competitions", "notebooks", "discussions"] as const).map((cat) => (
+                  <div
+                    key={cat}
+                    className="bg-gray-50 dark:bg-zinc-800/50 rounded-xl p-3 border border-gray-100 dark:border-zinc-700"
+                  >
+                    <p className="text-[10px] font-bold text-gray-400 tracking-wider mb-2 capitalize">
+                      {cat}
+                    </p>
+                    <div className="flex gap-2">
+                      <span className="flex flex-col items-center gap-0.5">
+                        <span className="text-base">🥇</span>
+                        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
+                          {kaggle.medals[cat].gold}
+                        </span>
+                      </span>
+                      <span className="flex flex-col items-center gap-0.5">
+                        <span className="text-base">🥈</span>
+                        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
+                          {kaggle.medals[cat].silver}
+                        </span>
+                      </span>
+                      <span className="flex flex-col items-center gap-0.5">
+                        <span className="text-base">🥉</span>
+                        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
+                          {kaggle.medals[cat].bronze}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </main>
