@@ -9,6 +9,7 @@ import {
   SiTypescript, SiReact, SiNextdotjs, SiTailwindcss,
   SiPython, SiR, SiCplusplus, SiZenn, SiMysql, SiKaggle
 } from "react-icons/si"; // 技術系アイコン
+import { TechStack } from "@/components/technology_stack"
 
 export default async function Home() {
 
@@ -16,9 +17,18 @@ export default async function Home() {
   const latestArticles = await getZennArticles();
 
   const atcoderRate = await fetchAtCoderRate(ACCOUNTS.atcoder.username)
-  console.log(atcoderRate)
 
   const kaggle = ACCOUNTS.kaggle;
+  const techList = [
+    { icon: SiPython, className: "text-[#3776AB]", label: "Python" },
+    { icon: SiR, className: "text-[#276DC3]", label: "R" },
+    { icon: SiCplusplus, className: "text-[#00599C]", label: "C++" },
+    { icon: SiMysql, className: "text-[#4479A1]", label: "MySQL" },  // 色も修正
+    { icon: SiTypescript, className: "text-[#3178C6]", label: "TS" },
+    { icon: SiReact, className: "text-[#61DAFB]", label: "React" },
+    { icon: SiNextdotjs, className: "text-black dark:text-white", label: "Next.js" },
+    { icon: SiTailwindcss, className: "text-[#06B6D4]", label: "Tailwind" },
+  ]
 
   return (
     <>
@@ -80,7 +90,7 @@ export default async function Home() {
                   
                   {/* テキストエリア */}
                   <div>
-                    <h3 className="font-bold text-lg text-brown-900 dark:text-brwon-100 flex items-center gap-2">
+                    <h3 className="font-bold text-lg text-brown-900 dark:text-brown-100 flex items-center gap-2">
                       MameLab
                     </h3>
                     <p className="text-xs text-brown-400 dark:text-brown-300 mt-1 font-medium">
@@ -103,7 +113,7 @@ export default async function Home() {
                   <div className="shrink-0 relative">
                     <Image
                       src="/images/bashikoma-icon.png"
-                      alt="MameLab Icon"
+                      alt="バシコマ Icon"
                       width={60}
                       height={60}
                       className="rounded-xl shadow-md group-hover:scale-105 transition-transform"
@@ -112,7 +122,7 @@ export default async function Home() {
                   
                   <div>
                     <h3 className="font-bold text-lg text-brown-900 dark:text-brown-100 flex items-center gap-2">
-                      MameLab
+                      バシコマ
                     </h3>
                     <p className="text-xs text-brown-400 dark:text-brown-300 mt-1 font-medium">
                       バシコマ
@@ -142,53 +152,9 @@ export default async function Home() {
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">Skills (学習中)</p>
               
               <div className="flex flex-wrap gap-3">
-                {/* Python */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
-                   <SiPython className="text-2xl text-[#3776AB]" />
-                   <span className="text-[10px] font-bold text-gray-500">Python</span>
-                </div>
-
-                {/* R */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
-                   <SiR className="text-2xl text-[#276DC3]" />
-                   <span className="text-[10px] font-bold text-gray-500">R</span>
-                </div>
-
-                {/* C++ */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
-                   <SiCplusplus className="text-2xl text-[#00599C]" />
-                   <span className="text-[10px] font-bold text-gray-500">C++</span>
-                </div>
-
-                {/* MySQL */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
-                   <SiMysql className="text-2xl text-[#00599C]" />
-                   <span className="text-[10px] font-bold text-gray-500">MySQL</span>
-                </div>
-
-                {/* TypeScript */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
-                   <SiTypescript className="text-2xl text-[#3178C6]" />
-                   <span className="text-[10px] font-bold text-gray-500">TS</span>
-                </div>
-
-                {/* React */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
-                   <SiReact className="text-2xl text-[#61DAFB]" />
-                   <span className="text-[10px] font-bold text-gray-500">React</span>
-                </div>
-
-                {/* Next.js */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
-                   <SiNextdotjs className="text-2xl text-black dark:text-white" />
-                   <span className="text-[10px] font-bold text-gray-500">Next.js</span>
-                </div>
-
-                {/* Tailwind */}
-                <div className="flex flex-col items-center gap-1 p-3 border border-gray-100 dark:border-zinc-800 rounded-xl min-w-17.5">
-                   <SiTailwindcss className="text-2xl text-[#06B6D4]" />
-                   <span className="text-[10px] font-bold text-gray-500">Tailwind</span>
-                </div>
+                {techList.map(tech => (
+                  <TechStack key={tech.label} {...tech}/>
+                ))}
               </div>    
             </div>   
           </div>
