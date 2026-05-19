@@ -23,7 +23,7 @@ export default async function Home() {
     { icon: SiPython, className: "text-[#3776AB]", label: "Python" },
     { icon: SiR, className: "text-[#276DC3]", label: "R" },
     { icon: SiCplusplus, className: "text-[#00599C]", label: "C++" },
-    { icon: SiMysql, className: "text-[#4479A1]", label: "MySQL" },  // 色も修正
+    { icon: SiMysql, className: "text-[#4479A1]", label: "MySQL" }, 
     { icon: SiTypescript, className: "text-[#3178C6]", label: "TS" },
     { icon: SiReact, className: "text-[#61DAFB]", label: "React" },
     { icon: SiNextdotjs, className: "text-black dark:text-white", label: "Next.js" },
@@ -100,7 +100,7 @@ export default async function Home() {
                 </div>
               </a>
             </div>
-            {/* 
+            
             <div className="bg-white dark:bg-zinc-900 p-6 round-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">関わったアプリ</p>
               <a 
@@ -131,7 +131,7 @@ export default async function Home() {
                 </div>
               </a>
             </div>
-            */}
+            
             
             
 
