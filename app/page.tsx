@@ -125,7 +125,7 @@ export default async function Home() {
                       バシコマ
                     </h3>
                     <p className="text-xs text-brown-400 dark:text-brown-300 mt-1 font-medium">
-                      バシコマ
+                      一橋大学時間割アプリ
                     </p>
                   </div>
                 </div>
