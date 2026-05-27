@@ -24,3 +24,12 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes tokenCountFlash {
+  from { transform: scale(1.12); opacity: 0.6; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.animate-value-change {
+  animation: tokenCountFlash 0.2s ease-out;
+}

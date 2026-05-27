@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Zen_Maru_Gothic } from "next/font/google";
+import { M_PLUS_Rounded_1c } from "next/font/google";
 
 import "./globals.css";
 
-// Zen丸ゴシックの設定
-const zenMaru = Zen_Maru_Gothic({
-  weight: '500', //太さ
-  subsets: ["latin"], // フォントの高速化
-  display: "swap"
+const mplusRounded = M_PLUS_Rounded_1c({
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
+  display: "swap",
 })
 
 // メタデータ設定
@@ -24,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={zenMaru.className}
+        className={mplusRounded.className}
       >
         {children} {/* 各tsxで作ったのがここに入る*/}
       </body>  

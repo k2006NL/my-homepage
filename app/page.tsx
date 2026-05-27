@@ -34,9 +34,9 @@ export default async function Home() {
     <>
       <div className="w-full h-64 flex items-center justify-center bg-cover bg-center bg-[url('/images/home-header.jpg')]">
         <h1 className="text-2xl md:text-3xl font-extrabold tracking-widest text-gray-800 dark:text-white
-          bg-white/90 dark:bg-zinc-900/90
-          px-10 py-4 rounded-full
-          shadow-xl dark:shadow-zinc-800/30 border border-blue-100"
+          bg-white dark:bg-zinc-900
+          px-10 py-4 rounded
+          border-2 border-gray-300 dark:border-zinc-600"
         >
           ふるーれのまーれ
         </h1>
@@ -49,7 +49,7 @@ export default async function Home() {
           
           {/* 左サイドバー */}
           <div className="w-full md:w-1/3 flex flex-col gap-6 order-2 md:order-1">
-            <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded shadow-sm border border-gray-300 dark:border-zinc-700">
               <div className="flex items-center gap-3">
                 <Image
                   src="/images/AtCoder-logo.png"
@@ -67,13 +67,13 @@ export default async function Home() {
 
               </div>
             </div>
-            <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded shadow-sm border border-gray-300 dark:border-zinc-700">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">作ったアプリ</p>
               <a 
                 href="https://play.google.com/store/apps/details?id=com.mamelog"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block p-4 bg-brown-50 dark:bg-brown-900/20 border border-brown-100 dark:border-brown-800 rounded-xl hover:bg-brown-100 dark:hover:bg-brown-900/40 transition-all hover:shadow-md hover:-translate-y-0.5"
+                className="group block p-4 bg-brown-50 dark:bg-brown-900/20 border border-brown-100 dark:border-brown-800 rounded hover:bg-brown-100 dark:hover:bg-brown-900/40 transition-all hover:shadow-md hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-4">
                   
@@ -84,7 +84,7 @@ export default async function Home() {
                       alt="MameLab Icon"
                       width={60}
                       height={60}
-                      className="rounded-xl shadow-md group-hover:scale-105 transition-transform"
+                      className="rounded shadow-md group-hover:scale-105 transition-transform"
                     />
                   </div>
                   
@@ -101,13 +101,13 @@ export default async function Home() {
               </a>
             </div>
             
-            <div className="bg-white dark:bg-zinc-900 p-6 round-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+            <div className="bg-white dark:bg-zinc-900 p-6 round-2xl shadow-sm border border-gray-300 dark:border-zinc-700">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">関わったアプリ</p>
               <a 
                 href="https://play.google.com/store/apps/details?id=com.hitcomputer.hitoshi&hl=ja"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block p-4 bg-brown-50 dark:bg-brown-900/20 border border-brown-100 dark:border-brown-800 rounded-xl hover:bg-brown-100 dark:hover:bg-brown-900/40 transition-all hover:shadow-md hover:-translate-y-0.5"
+                className="group block p-4 bg-brown-50 dark:bg-brown-900/20 border border-brown-100 dark:border-brown-800 rounded hover:bg-brown-100 dark:hover:bg-brown-900/40 transition-all hover:shadow-md hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-4">   
                   <div className="shrink-0 relative">
@@ -116,7 +116,7 @@ export default async function Home() {
                       alt="バシコマ Icon"
                       width={60}
                       height={60}
-                      className="rounded-xl shadow-md group-hover:scale-105 transition-transform"
+                      className="rounded shadow-md group-hover:scale-105 transition-transform"
                     />
                   </div>
                   
@@ -135,7 +135,7 @@ export default async function Home() {
             
             
 
-            <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded shadow-sm border border-gray-300 dark:border-zinc-700">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">SNS</p>
               <div className="flex gap-4">
                 <SocialButton
@@ -148,7 +148,7 @@ export default async function Home() {
                 />
               </div>
             </div>  
-            <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded shadow-sm border border-gray-300 dark:border-zinc-700">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">Skills (学習中)</p>
               
               <div className="flex flex-wrap gap-3">
@@ -165,7 +165,7 @@ export default async function Home() {
 
             
             {/* Tech Blogエリア */}
-            <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800 h-full">
+            <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded shadow-sm border border-gray-300 dark:border-zinc-700 h-full">
               
               {/* ヘッダーエリア */}
               <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-100 dark:border-zinc-800">
@@ -183,28 +183,28 @@ export default async function Home() {
               </div>
 
               {/* おすすめ記事 */}
-              <div className="mb-10 bg-amber-50/50 dark:bg-zinc-800/50 p-6 rounded-2xl border border-amber-100 dark:border-zinc-700 relative overflow-hidden">              
-                <FaFire className="absolute -right-6 -bottom-6 text-8xl text-amber-100 dark:text-amber-900/20 pointer-events-none rotate-12" />
-                
-                <p className="font-bold text-sm mb-4 text-amber-500 uppercase tracking-wider flex items-center gap-2 relative z-10">
+              <div className="mb-10 bg-gray-50 dark:bg-zinc-800 p-6 rounded border border-gray-300 dark:border-zinc-600 relative overflow-hidden">
+                <FaFire className="absolute -right-6 -bottom-6 text-8xl text-gray-200 dark:text-zinc-700 pointer-events-none rotate-12" />
+
+                <p className="font-bold text-sm mb-4 text-blue-600 uppercase tracking-wider flex items-center gap-2 relative z-10">
                   <FaFire /> Pickup Articles
                 </p>
                 
                 <div className="flex flex-col gap-3 relative z-10">
                   {PICKUP_ARTICLES.map((article, index) => (
                       <a key={index} href={article.url} target="_blank" rel="noopener noreferrer"
-                        className="group flex items-center gap-4 p-3 rounded-xl bg-white dark:bg-zinc-900 border border-amber-200 dark:border-zinc-700 shadow-sm hover:shadow-md hover:border-amber-300 transition-all"
+                        className="group flex items-center gap-4 p-3 rounded bg-white dark:bg-zinc-900 border border-gray-300 dark:border-zinc-700 hover:border-blue-500 transition-all"
                       >
-                        <span className="text-2xl shrink-0 bg-amber-50 dark:bg-zinc-800 p-2 rounded-lg group-hover:scale-110 transition-transform">
+                        <span className="text-2xl shrink-0 bg-gray-100 dark:bg-zinc-800 p-2 rounded group-hover:scale-110 transition-transform">
                           {article.emoji}
                         </span>
                         
                         <div className="flex-1 min-w-0">
                           <div className="flex justify-between items-start gap-2">
-                            <p className="font-bold text-gray-800 dark:text-gray-100 line-clamp-1 group-hover:text-amber-600 transition-colors">
+                            <p className="font-bold text-gray-800 dark:text-gray-100 line-clamp-1 group-hover:text-blue-600 transition-colors">
                               {article.title}
                             </p>
-                            <span className="text-[10px] font-bold text-amber-600 bg-amber-100 px-2 py-0.5 rounded-full shrink-0">
+                            <span className="text-[10px] font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded shrink-0">
                               Most Read
                             </span>
                           </div>
@@ -234,14 +234,14 @@ export default async function Home() {
 
                       return (
                       <a key={index} href={article.link} target="_blank" rel="noopener noreferrer"
-                        className="group block py-4 px-2 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded-lg transition-colors"
+                        className="group block py-4 px-2 hover:bg-gray-50 dark:hover:bg-zinc-800/50 rounded transition-colors"
                       >
                         <div className="flex justify-between items-start gap-3">
                           <p className="font-bold text-gray-700 dark:text-gray-200 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             {article.title}
                           </p>
                           {isNew && (
-                              <span className="text-[10px] font-bold text-white bg-blue-500 px-2 py-0.5 rounded-full shrink-0 animate-pulse">
+                              <span className="text-[10px] font-bold text-white bg-blue-500 px-2 py-0.5 rounded shrink-0 animate-pulse">
                                 New
                               </span>
                           )}
@@ -257,14 +257,14 @@ export default async function Home() {
                   </div>
                 ): (
                   // 記事が取得できなかったときに質素にしないように
-                  <div className="text-gray-400 text-sm py-12 text-center border-dashed border-2 border-gray-100 dark:border-zinc-800 rounded-xl">
+                  <div className="text-gray-400 text-sm py-12 text-center border-dashed border-2 border-gray-100 dark:border-zinc-800 rounded">
                     記事はまだありません... 🐢
                   </div>
                 )}           
               </div>
             </div>
               {/* Kaggle 実績ゾーン */}
-            <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+            <div className="bg-white dark:bg-zinc-900 p-6 md:p-8 rounded shadow-sm border border-gray-300 dark:border-zinc-700">
               {/* ヘッダーエリア */}
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100 dark:border-zinc-800">
                 <h2 className="text-2xl md:text-3xl font-extrabold flex items-center gap-2 text-gray-800 dark:text-white">
@@ -293,7 +293,7 @@ export default async function Home() {
                 {(["competitions", "notebooks", "discussions"] as const).map((cat) => (
                   <div
                     key={cat}
-                    className="bg-gray-50 dark:bg-zinc-800/50 rounded-xl p-3 border border-gray-100 dark:border-zinc-700"
+                    className="bg-gray-50 dark:bg-zinc-800/50 rounded p-3 border border-gray-100 dark:border-zinc-700"
                   >
                     <p className="text-[10px] font-bold text-gray-400 tracking-wider mb-2 capitalize">
                       {cat}
