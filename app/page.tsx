@@ -4,6 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import SocialButton from "@/components/SocialButton";
 import { getZennArticles, PICKUP_ARTICLES } from "@/lib/zenn";
 import { fetchAtCoderRate, getAtCoderColor } from "@/lib/atcoder";
+import { RESEARCH_NEWS } from "@/lib/research_news";
 import { ACCOUNTS } from "@/lib/accounts";
 import {
   SiTypescript, SiReact, SiNextdotjs, SiTailwindcss,
@@ -67,7 +68,7 @@ export default async function Home() {
 
               </div>
             </div>
-            <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded shadow-sm border border-gray-300 dark:border-zinc-700">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">作ったアプリ</p>
               <a 
                 href="https://play.google.com/store/apps/details?id=com.mamelog"
@@ -100,14 +101,32 @@ export default async function Home() {
                 </div>
               </a>
             </div>
-            
-            <div className="bg-white dark:bg-zinc-900 p-6 round-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+                        <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+              <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">研究関連</p>
+              {RESEARCH_NEWS.length > 0 ? (
+                <ul className="flex flex-col divide-y divide-gray-100 dark:divide-zinc-800">
+                  {RESEARCH_NEWS.map((news, index) => (
+                    <li key={index} className="flex flex-col gap-1 py-2">
+                      <span className="text-xs font-bold text-blue-500">
+                        {news.date}
+                      </span>
+                      <p className="text-sm text-gray-700 dark:text-gray-200">
+                        {news.content}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              ):(
+                <p className="text-sm text-gray-400">まだお知らせはありません</p>
+              )}
+            </div>
+            <div className="bg-white dark:bg-zinc-900 p-6 round-2xl shadow-sm border border-gray-300 dark:border-zinc-700">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">関わったアプリ</p>
               <a 
                 href="https://play.google.com/store/apps/details?id=com.hitcomputer.hitoshi&hl=ja"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block p-4 bg-brown-50 dark:bg-brown-900/20 border border-brown-100 dark:border-brown-800 rounded-xl hover:bg-brown-100 dark:hover:bg-brown-900/40 transition-all hover:shadow-md hover:-translate-y-0.5"
+                className="group block p-4 bg-brown-50 dark:bg-brown-900/20 border border-brown-100 dark:border-brown-800 rounded hover:bg-brown-100 dark:hover:bg-brown-900/40 transition-all hover:shadow-md hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-4">   
                   <div className="shrink-0 relative">
@@ -116,7 +135,7 @@ export default async function Home() {
                       alt="バシコマ Icon"
                       width={60}
                       height={60}
-                      className="rounded-xl shadow-md group-hover:scale-105 transition-transform"
+                      className="rounded shadow-md group-hover:scale-105 transition-transform"
                     />
                   </div>
                   
@@ -135,7 +154,7 @@ export default async function Home() {
             
             
 
-            <div className="bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-zinc-800">
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded shadow-sm border border-gray-300 dark:border-zinc-700">
               <p className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100">SNS</p>
               <div className="flex gap-4">
                 <SocialButton
