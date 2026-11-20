@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# my-homepage
 
-## Getting Started
+自分のポートフォリオ兼リンク集です。
 
-First, run the development server:
+**公開URL**：https://my-homepage-gamma-cyan.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 載せているもの
+
+- 作ったアプリ（MameLab：コーヒー抽出記録アプリ）と、関わったアプリ（バシコマ：一橋大学の時間割アプリ）
+- 研究関連のお知らせ（YANS 2026 での発表など）
+- AtCoder のレート（AtCoder の履歴 JSON から取得）
+- Zenn の最新記事（RSS から取得）と、おすすめ記事
+- Kaggle の実績
+
+## 技術
+
+- Next.js（App Router）/ React / TypeScript
+- Tailwind CSS
+- rss-parser（Zenn の RSS 取得）
+- Vercel にデプロイ
+
+## 構成
+
+```
+app/          ページ本体（page.tsx）とレイアウト
+components/   SNSボタン、技術スタック表示などの部品
+lib/          外部データの取得（AtCoder・Zenn）と、アカウント情報の一元管理
+public/       画像
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+アカウント名やURLは `lib/accounts.ts` にまとめていて、ここだけ直せば全体に反映されます。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ローカルで動かす
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+http://localhost:3000 で確認できます。
